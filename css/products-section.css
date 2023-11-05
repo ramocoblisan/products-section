@@ -4,6 +4,7 @@
   --red-color: #d41443;
   --white-color: #ffffff;
   --pink-color: #ffa5ba;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -63,7 +64,7 @@ body {
 
 .ice-cream {
   width: 100%;
-  height: auto;
+  height: 510px;
   flex-shrink: 0;
   border-radius: 24px;
   background: #ffb8ca;
@@ -72,13 +73,16 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  transition: box-shadow var(--transition), background var(--transition);
 }
 
 .ice-cream-image-products {
   margin-bottom: 20px;
   position: absolute;
   width: 280px;
-  top: -133px;
+  top: -140px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .ice-cream h3 {
@@ -96,6 +100,7 @@ body {
   letter-spacing: 0.8px;
   margin-bottom: 32px;
   margin-top: 170px;
+  transition: transform var(--transition);
 }
 
 .ice-cream svg {
@@ -114,10 +119,12 @@ body {
   line-height: 152%; /* 21.28px */
   letter-spacing: 0.56px;
   padding: 30px;
+  transition: transform var(--transition);
 }
 
 .arrow-red-products {
   margin-bottom: 40px;
+  transition: transform var(--transition);
 }
 
 /* Ice coffee section */
@@ -126,11 +133,14 @@ body {
   position: absolute;
   width: 280px;
   top: -140px;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 
 .ice-coffee {
   width: 100%;
-  height: auto;
+  height: 510px;
   flex-shrink: 0;
   border-radius: 24px;
   background: #f0d1a5;
@@ -139,6 +149,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  transition: box-shadow var(--transition), background var(--transition);
 }
 
 .ice-coffee h3 {
@@ -156,6 +167,7 @@ body {
   letter-spacing: 0.8px;
   margin-bottom: 32px;
   margin-top: 170px;
+  transition: transform var(--transition);
 }
 
 .ice-coffee svg {
@@ -174,6 +186,7 @@ body {
   line-height: 152%; /* 21.28px */
   letter-spacing: 0.56px;
   padding: 32px;
+  transition: transform var(--transition);
 }
 
 /* Milkshakes section */
@@ -182,11 +195,13 @@ body {
   position: absolute;
   width: 280px;
   top: -140px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .milkshakes {
   width: 100%;
-  height: auto;
+  height: 510px;
   flex-shrink: 0;
   border-radius: 24px;
   background: #c2e297;
@@ -195,6 +210,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  transition: box-shadow var(--transition), background var(--transition);
 }
 
 .milkshakes h3 {
@@ -212,6 +228,7 @@ body {
   letter-spacing: 0.8px;
   margin-bottom: 32px;
   margin-top: 170px;
+  transition: transform var(--transition);
 }
 
 .milkshakes svg {
@@ -230,7 +247,54 @@ body {
   line-height: 152%; /* 21.28px */
   letter-spacing: 0.56px;
   padding: 32px;
+  transition: transform var(--transition);
 }
+
+.ice-cream:hover h3,
+.ice-cream:hover p
+{
+  transform: scale(1.10);
+}
+
+.ice-coffee:hover h3,
+.ice-coffee:hover p
+ {
+  transform: scale(1.10);
+}
+
+.milkshakes:hover h3,
+.milkshakes:hover p
+ {
+  transform: scale(1.10);
+}
+
+.ice-cream:hover .arrow-red-products{
+ transform: rotate(-90deg);
+}
+
+.ice-coffee:hover .arrow-red-products{
+  transform: rotate(-90deg);
+}
+
+.milkshakes:hover .arrow-red-products{
+  transform: rotate(-90deg);
+}
+
+.ice-cream:hover {
+  background: #e5a5b5;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.ice-coffee:hover {
+  background: #dbc7ac;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.milkshakes:hover {
+  background: #aecb87;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
 
 /*Tablet*/
 @media (min-width: 768px) {
@@ -300,6 +364,19 @@ body {
   .ice-coffee p {
     padding: 32px 18px;
   }
+
+  .ice-cream {
+    height: 480px;
+  }
+
+  .ice-coffee {
+    height: 480px;
+  }
+
+  .milkshakes {
+    height: 480px;
+  }
+  
 }
 
 /*Desktop*/
@@ -384,5 +461,17 @@ body {
     font-size: 16px;
     letter-spacing: 0.64px;
     padding: 32px;
+  }
+
+  .ice-cream {
+    height: 535px;
+  }
+
+  .ice-coffee {
+    height: 535px;
+  }
+
+  .milkshakes {
+    height: 535px;
   }
 }
